@@ -9,7 +9,6 @@ function App() {
       src:
         "https://specials-images.forbesimg.com/imageserve/5d35eacaf1176b0008974b54/960x0.jpg"
     },
-
     {
       id: 1,
       src:
@@ -17,7 +16,6 @@ function App() {
     },
     {
       id: 2,
-
       src:
         "https://stimg.cardekho.com/images/carexteriorimages/630x420/Bugatti/Bugatti-Chiron/6524/1550828170128/front-left-side-47.jpg"
     },
@@ -25,10 +23,15 @@ function App() {
       id: 3,
       src:
         "https://www.telegraph.co.uk/content/dam/news/2017/11/11/Lam1-xlarge_trans_NvBQzQNjv4BqnAdySV0BR-4fDN_-_p756cVfcy8zLGPV4EhRkjQy7tg.jpg"
+    },
+    {
+      id: 4,
+      src:
+        "https://ichef.bbci.co.uk/news/624/cpsprodpb/2F81/production/_103916121_mediaitem103910950.jpg"
     }
   ]);
   return (
-    <div className="App">
+    <div className="App" style={{width: 800, height: 650}}>
       <Carrousel images={images} />
     </div>
   );

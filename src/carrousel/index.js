@@ -16,13 +16,32 @@ export default function Carrousel({ images }) {
   };
 
   return (
-    <div>
+    <div style={{ width: "100%" }}>
       <div style={{ display: "Flex" }}>
-        <button onClick={onPrevious}>{"<"}</button>
-        <img src={images[currentIndex].src} width={500} height={400}></img>
-        <button onClick={onNext}>{">"}</button>
+        <button
+          style={{ width: "5rem", boxShadow: "inset 10px 10px 50px #fff" }}
+          onClick={onPrevious}
+        >
+          {"<"}
+        </button>
+        <img
+          style={{
+            borderRadius: "5%",
+            border: "1px solid #ddd",
+            padding: "5px"
+          }}
+          src={images[currentIndex].src}
+          width={700}
+          height={400}
+        ></img>
+        <button
+          style={{ width: "5rem", boxShadow: "inset 10px 10px 50px #fff" }}
+          onClick={onNext}
+        >
+          {">"}
+        </button>
       </div>
-      <div>
+      <div style={{ marginTop: "1rem" }}>
         {images.map(x => (
           <img
             src={x.src}
