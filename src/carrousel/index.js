@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles.css";
 
 export default function Carrousel({ images }) {
   const [currentIndex, setCurrentIndex] = React.useState(0);
@@ -18,37 +19,37 @@ export default function Carrousel({ images }) {
   return (
     <div style={{ width: "100%" }}>
       <div style={{ display: "Flex" }}>
-        <button
-          style={{ width: "5rem", boxShadow: "inset 10px 10px 50px #fff" }}
-          onClick={onPrevious}
-        >
+        <button className="btn-action" onClick={onPrevious}>
           {"<"}
         </button>
         <img
-          style={{
-            borderRadius: "5%",
-            border: "1px solid #ddd",
-            padding: "5px"
-          }}
+          className="current"
           src={images[currentIndex].src}
-          width={700}
-          height={400}
+          alt="current"
         ></img>
-        <button
-          style={{ width: "5rem", boxShadow: "inset 10px 10px 50px #fff" }}
-          onClick={onNext}
-        >
+        <button className="btn-action" onClick={onNext}>
           {">"}
         </button>
       </div>
       <div style={{ marginTop: "1rem" }}>
         {images.map(x => (
-          <img
-            src={x.src}
-            width={50}
-            height={50}
-            onClick={() => setCurrentIndex(x.id)}
-          />
+          <>
+            {x.id === currentIndex ? (
+              <img
+                className="img-mini-current"
+                src={x.src}
+                onClick={() => setCurrentIndex(x.id)}
+                alt="Current"
+              />
+            ) : (
+              <img
+                className="img-mini"
+                src={x.src}
+                onClick={() => setCurrentIndex(x.id)}
+                alt="mini"
+              />
+            )}
+          </>
         ))}
       </div>
     </div>
