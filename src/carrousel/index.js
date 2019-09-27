@@ -32,20 +32,20 @@ export default function Carrousel({ images }) {
         </button>
       </div>
       <div style={{ marginTop: "1rem" }}>
-        {images.map(x => (
+        {images.map((x, i) => (
           <>
             {x.id === currentIndex ? (
               <img
                 className="img-mini-current"
                 src={x.src}
-                onClick={() => setCurrentIndex(x.id)}
+                onClick={() => setCurrentIndex(i)}
                 alt="Current"
               />
             ) : (
               <img
                 className="img-mini"
                 src={x.src}
-                onClick={() => setCurrentIndex(x.id)}
+                onClick={() => setCurrentIndex(i)}
                 alt="mini"
               />
             )}
